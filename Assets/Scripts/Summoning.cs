@@ -18,9 +18,9 @@ public class Summoning : MonoBehaviour
                 positionInSequence1++;
                 if (positionInSequence1 >= unit1combo.Length)
                 {
-                    positionInSequence1 = 0;
-                    positionInSequence2 = 0;
+                    DefaultPositionInSequence();
                     SpawnUnit1();
+                    return;
                 }
             }
             else
@@ -33,9 +33,9 @@ public class Summoning : MonoBehaviour
                 positionInSequence2++;
                 if (positionInSequence2 >= unit2combo.Length)
                 {
-                    positionInSequence1 = 0;
-                    positionInSequence2 = 0;
+                    DefaultPositionInSequence();
                     SpawnUnit2();
+                    return;
                 }
             }
             else
@@ -52,7 +52,6 @@ public class Summoning : MonoBehaviour
     {
         // Add the code for what you want to happen when the user presses the sequence
         Debug.Log("Unit1 spawned!");
-        return;
     }
 
     // Define the SpawnUnit2 function
@@ -60,7 +59,6 @@ public class Summoning : MonoBehaviour
     {
         // Add the code for what you want to happen when the user presses the sequence
         Debug.Log("Unit2 spawned!");
-        return;
     }
     
     void DefaultPositionInSequence()
