@@ -1,39 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System.Linq;
 
 public class ComboUI : MonoBehaviour
 {
-    public Text inputText; // Assign this in the inspector
-
-    private KeyCode[] unit1combo = new KeyCode[] { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.UpArrow };
-    private KeyCode[] unit2combo = new KeyCode[] { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.RightArrow };
+    public TextMeshProUGUI inputText; // Assign this in the inspector
+    public GameObject objectWithScript;
+    public Summoning summoningScript;
 
     // Update is called once per frame
     void Start()
     {
-        inputText = GetComponent<Text>();
+        inputText = GetComponent<TextMeshProUGUI>();
+        summoningScript = objectWithScript.GetComponent<Summoning>();
+
     }
     void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            for (int i = 0; i < unit1combo.Length; i++)
-            {
-                if (Input.GetKeyDown(unit1combo[i]))
-                {
-                    inputText.text += " " + unit1combo[i].ToString();
-                    break;
-                }
-            }
-
-            for (int i = 0; i < unit2combo.Length; i++)
-            {
-                if (Input.GetKeyDown(unit2combo[i]))
-                {
-                    inputText.text += " " + unit2combo[i].ToString();
-                    break;
-                }
-            }
-        }
+        string combo = string.Join(" ", summoningScript.unitCombo.Select(k => k == KeyCode.None ? "" : k.ToString()).ToArray());
+        inputText.text = combo;
     }
 }
