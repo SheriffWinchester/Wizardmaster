@@ -17,13 +17,13 @@ public class Summoning : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            DetectInput();
+            DetectInput(); //detects the key being pressed
             if (i < 5)
             {
                 if (kCode == KeyCode.W || kCode == KeyCode.A || kCode == KeyCode.D || kCode == KeyCode.S)
                 {
                     unitCombo[i] = kCode;
-                    combo = unitCombo[0].ToString() + unitCombo[1].ToString() + unitCombo[2].ToString() + unitCombo[3].ToString() + unitCombo[4].ToString();
+                    combo = unitCombo[0].ToString() + unitCombo[1].ToString() + unitCombo[2].ToString() + unitCombo[3].ToString() + unitCombo[4].ToString(); //Converts the KeyCode to a string
                     Debug.Log($"Key pressed: {i}, {combo}, {comboEntered}");
                     ++i;
                 }
