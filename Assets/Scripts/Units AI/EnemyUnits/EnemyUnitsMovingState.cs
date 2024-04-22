@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitsMovingState : UnitsBaseState
+public class EnemyUnitsMovingState : EnemyUnitsBaseState
 {
-    public override void EnterState(UnitsStateManager unit)
+    public override void EnterState(EnemyUnitsStateManager unit)
     {
         Debug.Log("Moving State");
     }
 
-    public override void UpdateState(UnitsStateManager unit)
+    public override void UpdateState(EnemyUnitsStateManager unit)
     {
         float searchRadius = 3f; // Set this to the radius of your search area
         LayerMask enemyLayer = LayerMask.GetMask("EnemyUnit"); // Set this to the layer of your enemy units
@@ -24,7 +24,7 @@ public class UnitsMovingState : UnitsBaseState
         }
     }
 
-    public override void OnCollisionEnter2D(UnitsStateManager unit)
+    public override void OnCollisionEnter2D(EnemyUnitsStateManager unit)
     {
         
     }

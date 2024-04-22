@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitsStateManager : MonoBehaviour
+public class PlayerUnitsStateManager : MonoBehaviour
 {
     public GameObject TargetEnemy { get; set; }
-    UnitsBaseState currentState;
-    public UnitsMovingState MovingState = new UnitsMovingState();
-    public UnitsChasingState ChasingState = new UnitsChasingState();
-    public UnitsAttackState AttackState = new UnitsAttackState();
+    PlayerUnitsBaseState currentState;
+    public PlayerUnitsMovingState MovingState = new PlayerUnitsMovingState();
+    public PlayerUnitsChasingState ChasingState = new PlayerUnitsChasingState();
+    public PlayerUnitsAttackState AttackState = new PlayerUnitsAttackState();
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class UnitsStateManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    public void SwitchState(UnitsBaseState state)
+    public void SwitchState(PlayerUnitsBaseState state)
     {
         currentState = state;
         currentState.EnterState(this);

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitsChasingState : UnitsBaseState
+public class EnemyUnitsChasingState : EnemyUnitsBaseState
 {
-    public override void EnterState(UnitsStateManager unit)
+    public override void EnterState(EnemyUnitsStateManager unit)
     {
         Debug.Log("Chasing State");
     }
 
-    public override void UpdateState(UnitsStateManager unit)
+    public override void UpdateState(EnemyUnitsStateManager unit)
     {
         if (unit.TargetEnemy != null)
         {
@@ -24,7 +24,7 @@ public class UnitsChasingState : UnitsBaseState
         }
     }
 
-    public override void OnCollisionEnter2D(UnitsStateManager unit)
+    public override void OnCollisionEnter2D(EnemyUnitsStateManager unit)
     {
         
     }
