@@ -11,7 +11,7 @@ public class Summoning : MonoBehaviour
     public string combo;
     public GameObject unit1;
     public GameObject unit2;
-
+    public Unit1Factory unit1Factory;
     // Update is called once per frame
     public void Update()
     {
@@ -47,7 +47,7 @@ public class Summoning : MonoBehaviour
             Debug.Log("Unit1 spawned!");
             i = 0;
             comboEntered = false;
-            Instantiate(unit1, new Vector3(-4, 2, 0), Quaternion.identity);
+            unit1Factory.CreateUnit();
             // Clear the unitCombo array
             for (int j = 0; j < unitCombo.Length; j++)
             {

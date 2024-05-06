@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 103326190501857557}
   - component: {fileID: 5776698752921303148}
-  - component: {fileID: -983046385938927247}
   - component: {fileID: -4861982558616209034}
   - component: {fileID: -4135377351997563782}
+  - component: {fileID: -4812415772591670934}
+  - component: {fileID: 8775556243035084358}
+  - component: {fileID: 3614932913717324935}
   m_Layer: 6
   m_Name: Unit 1
   m_TagString: PlayerUnit
@@ -87,18 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-983046385938927247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4378486495597503099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b44a8aacdfa3784f9b8f454ae5f2b54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-4861982558616209034
 Rigidbody2D:
   serializedVersion: 4
@@ -146,3 +136,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.28, y: 3.8}
   m_EdgeRadius: 0
+--- !u!114 &-4812415772591670934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378486495597503099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab06ad0a1c7040da9dd53bc553e9a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 4378486495597503099}
+  unitData: {fileID: 11400000, guid: 7e7f47ff0ddbc41d691a667e20960b9e, type: 2}
+--- !u!114 &8775556243035084358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378486495597503099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4c4dd538a014cfca67154171faab97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitData: {fileID: 0}
+--- !u!114 &3614932913717324935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378486495597503099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aab97e6480ef415c8ff7c896886bf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 0}
+  unitData: {fileID: 11400000, guid: 7e7f47ff0ddbc41d691a667e20960b9e, type: 2}
+  health: 0

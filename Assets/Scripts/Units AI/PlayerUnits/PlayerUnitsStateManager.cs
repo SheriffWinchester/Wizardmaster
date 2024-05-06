@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerUnitsStateManager : MonoBehaviour
 {
+    public Unit1Data unitData;
     public GameObject TargetEnemy { get; set; }
     PlayerUnitsBaseState currentState;
     public PlayerUnitsMovingState MovingState = new PlayerUnitsMovingState();
