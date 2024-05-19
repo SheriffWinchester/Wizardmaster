@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8e8d320f64d4e4e974c549f19b80c8, type: 3}
-  m_Name: UnitData
+  m_Script: {fileID: 11500000, guid: 09456f9c642b282498cd509bcb4587c9, type: 3}
+  m_Name: Unit2Data
   m_EditorClassIdentifier: 
   defaultHealth: 100
   defaultMagic: 100
-  health: 0
-  magic: 0

@@ -15,7 +15,7 @@ public class PlayerUnitsMovingState : PlayerUnitsBaseState
         LayerMask enemyLayer = LayerMask.GetMask("EnemyUnit"); // Set this to the layer of your enemy units
 
         Collider2D enemyInRange = Physics2D.OverlapCircle(unit.transform.position, searchRadius, layerMask: enemyLayer);
-        Debug.Log("Enemy in range: " + enemyLayer.value);
+        //Debug.Log("Enemy in range: " + enemyLayer.value);
         if (enemyInRange != null)
         {
             Debug.Log("Enemy found: " + enemyInRange.gameObject.name);

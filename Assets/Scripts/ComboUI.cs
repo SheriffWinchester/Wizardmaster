@@ -7,13 +7,13 @@ public class ComboUI : MonoBehaviour
 {
     public TextMeshProUGUI inputText; // Assign this in the inspector
     public GameObject objectWithScript;
-    public Summoning summoningScript;
+    public UnitsSummoning summoningScript;
 
     // Update is called once per frame
     void Start()
     {
         inputText = GetComponent<TextMeshProUGUI>();
-        summoningScript = objectWithScript.GetComponent<Summoning>();
+        summoningScript = objectWithScript.GetComponent<UnitsSummoning>();
 
     }
     void Update()
