@@ -13,9 +13,8 @@ public class PlayerUnitsChasingState : PlayerUnitsBaseState
     {
         if (unit.TargetEnemy != null)
         {
-            float speed = 5f; // Set this to your unit's speed
             Vector3 direction = (unit.TargetEnemy.transform.position - unit.transform.position).normalized;
-            unit.transform.position += direction * speed * Time.deltaTime;
+            unit.transform.position += direction * baseData.movingSpeed * Time.deltaTime;
         }
         else
         {

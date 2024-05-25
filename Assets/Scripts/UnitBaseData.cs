@@ -10,6 +10,8 @@ public class UnitBaseData : ScriptableObject
     [SerializeField] public float defaultHealth=100;
     [SerializeField] public float defaultMagic=100;
 
+    public int movingSpeed = 1;
+    public float searchRadius = 1.5f;
     public GameObject CreateUnit(GameObject unitPrefab)
     {
         GameObject newUnit = Instantiate(unitPrefab, new Vector3(-4, 2, 0), Quaternion.identity);

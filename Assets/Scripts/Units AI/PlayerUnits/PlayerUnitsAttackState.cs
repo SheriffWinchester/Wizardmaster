@@ -14,7 +14,7 @@ public class PlayerUnitsAttackState : PlayerUnitsBaseState
     // }
     public override void EnterState(PlayerUnitsStateManager unit)
     {
-       
+       Debug.Log("Attack State");
     }
 
     public override void UpdateState(PlayerUnitsStateManager unit)
