@@ -6,6 +6,7 @@ public class PlayerUnitsStateManager : MonoBehaviour
 {
     public GameObject TargetEnemy { get; set; }
     PlayerUnitsBaseState currentState;
+    public UnitBaseData baseData;
     public PlayerUnitsMovingState MovingState = new PlayerUnitsMovingState();
     public PlayerUnitsChasingState ChasingState = new PlayerUnitsChasingState();
     public PlayerUnitsAttackState AttackState = new PlayerUnitsAttackState();
@@ -18,7 +19,7 @@ public class PlayerUnitsStateManager : MonoBehaviour
 
     void Update()
     {
-        currentState.UpdateState(this);
+        currentState.UpdateState(this, baseData);
     }
 
     public void SwitchState(PlayerUnitsBaseState state)

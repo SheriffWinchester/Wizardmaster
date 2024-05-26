@@ -17,7 +17,7 @@ public class PlayerUnitsAttackState : PlayerUnitsBaseState
        Debug.Log("Attack State");
     }
 
-    public override void UpdateState(PlayerUnitsStateManager unit)
+    public override void UpdateState(PlayerUnitsStateManager unit, UnitBaseData baseData)
     {
         
     }
