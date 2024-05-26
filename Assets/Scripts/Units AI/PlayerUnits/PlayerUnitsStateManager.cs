@@ -7,13 +7,13 @@ public class PlayerUnitsStateManager : MonoBehaviour
     public GameObject TargetEnemy { get; set; }
     PlayerUnitsBaseState currentState;
     public UnitBaseData baseData;
-    public PlayerUnitsMovingState MovingState = new PlayerUnitsMovingState();
-    public PlayerUnitsChasingState ChasingState = new PlayerUnitsChasingState();
-    public PlayerUnitsAttackState AttackState = new PlayerUnitsAttackState();
+    public static PlayerUnitsMovingState MovingState;
+    public static PlayerUnitsChasingState ChasingState;
+    public static PlayerUnitsAttackState AttackState;
 
     void Start()
     {
-        currentState = MovingState;
+        currentState = PlayerUnitsStateManager.MovingState;
         currentState.EnterState(this);
     }
 

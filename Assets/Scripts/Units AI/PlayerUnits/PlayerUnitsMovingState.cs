@@ -35,7 +35,7 @@ public class PlayerUnitsMovingState : PlayerUnitsBaseState
         {
             Debug.Log("Enemy found: " + enemyInRange.gameObject.name);
             unit.TargetEnemy = enemyInRange.gameObject;
-            unit.SwitchState(unit.ChasingState);
+            unit.SwitchState(PlayerUnitsStateManager.ChasingState);
         }
     }
 }

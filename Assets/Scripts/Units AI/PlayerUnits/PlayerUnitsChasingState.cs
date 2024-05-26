@@ -19,7 +19,7 @@ public class PlayerUnitsChasingState : PlayerUnitsBaseState
         else
         {
             // If there's no target enemy, you might want to switch back to a default state
-            unit.SwitchState(unit.MovingState);
+            unit.SwitchState(PlayerUnitsStateManager.MovingState);
         }
     }
 
