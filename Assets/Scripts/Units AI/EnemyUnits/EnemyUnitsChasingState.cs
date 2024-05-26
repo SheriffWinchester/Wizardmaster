@@ -9,7 +9,7 @@ public class EnemyUnitsChasingState : EnemyUnitsBaseState
         Debug.Log("Chasing State");
     }
 
-    public override void UpdateState(EnemyUnitsStateManager unit)
+    public override void UpdateState(EnemyUnitsStateManager unit, UnitBaseData baseData)
     {
         if (unit.TargetEnemy != null)
         {

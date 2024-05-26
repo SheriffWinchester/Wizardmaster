@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8383714696175527380}
   - component: {fileID: -4944084847218832502}
   - component: {fileID: -2369810163465605034}
+  - component: {fileID: 2121433404217074223}
   m_Layer: 7
   m_Name: Enemy 1
   m_TagString: EnemyUnit
@@ -125,7 +126,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -146,3 +147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8f00acd197e784dad7bcea8e4d3ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseData: {fileID: 11400000, guid: 7e7f47ff0ddbc41d691a667e20960b9e, type: 2}
+--- !u!114 &2121433404217074223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5224222270496856495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aab97e6480ef415c8ff7c896886bf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 5224222270496856495}
+  unitData: {fileID: 11400000, guid: 7e7f47ff0ddbc41d691a667e20960b9e, type: 2}
+  health: 0

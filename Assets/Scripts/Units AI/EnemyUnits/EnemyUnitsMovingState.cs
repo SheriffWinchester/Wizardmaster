@@ -9,10 +9,10 @@ public class EnemyUnitsMovingState : EnemyUnitsBaseState
         Debug.Log("Moving State");
     }
 
-    public override void UpdateState(EnemyUnitsStateManager unit)
+    public override void UpdateState(EnemyUnitsStateManager unit, UnitBaseData baseData)
     {
-        Moving(unit);
-        SearchingUnits(unit);
+        Moving(unit, baseData);
+        SearchingUnits(unit, baseData);
     }
 
     public override void OnCollisionEnter2D(EnemyUnitsStateManager unit)
@@ -20,11 +20,11 @@ public class EnemyUnitsMovingState : EnemyUnitsBaseState
         
     }
 
-    void Moving(EnemyUnitsStateManager unit)
+    void Moving(EnemyUnitsStateManager unit, UnitBaseData baseData)
     {
         unit.transform.Translate(-baseData.movingSpeed * Time.deltaTime, 0, 0);
     }
-    void SearchingUnits(EnemyUnitsStateManager unit)
+    void SearchingUnits(EnemyUnitsStateManager unit, UnitBaseData baseData)
     {
         LayerMask enemyLayer = LayerMask.GetMask("PlayerUnit"); // Set this to the layer of your enemy units
 
