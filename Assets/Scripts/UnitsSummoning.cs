@@ -1,5 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class UnitsSummoning : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class UnitsSummoning : MonoBehaviour
     public GameObject unit1;
     public GameObject unit2;
     public GameObject unit3;
-    public UnitBaseData unitBaseData;
+    public UnitsBaseData unitsBaseData;
     int i = 0;
     public void Update()
     {
@@ -71,8 +72,10 @@ public class UnitsSummoning : MonoBehaviour
         {
             Debug.Log("Unit1 spawned!");
             i = 0;
-            comboEntered = false;
-            unitBaseData.CreateUnit(unit);
+            comboEntered = false; 
+            float yPos = Random.Range(-1.0f, 1.0f);
+            Vector3 randomPosition = new Vector3(-4f, yPos, 0);
+            GameObject newUnit = Instantiate(unit, randomPosition, Quaternion.identity);
             // Clear the unitCombo array
             for (int j = 0; j < unitCombo.Length; j++)
             {

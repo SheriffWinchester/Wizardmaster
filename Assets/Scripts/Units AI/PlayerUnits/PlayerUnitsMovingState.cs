@@ -9,7 +9,7 @@ public class PlayerUnitsMovingState : PlayerUnitsBaseState
         Debug.Log("Moving State");
     }
 
-    public override void UpdateState(PlayerUnitsStateManager unit, UnitBaseData baseData)
+    public override void UpdateState(PlayerUnitsStateManager unit, UnitsBaseData baseData)
     {
         Moving(unit, baseData);
         SearchingUnits(unit, baseData);
@@ -20,12 +20,12 @@ public class PlayerUnitsMovingState : PlayerUnitsBaseState
         
     }
 
-    void Moving(PlayerUnitsStateManager unit, UnitBaseData baseData)
+    void Moving(PlayerUnitsStateManager unit, UnitsBaseData baseData)
     {
         unit.transform.Translate(baseData.movingSpeed * Time.deltaTime, 0, 0);
     }
 
-    void SearchingUnits(PlayerUnitsStateManager unit, UnitBaseData baseData)
+    void SearchingUnits(PlayerUnitsStateManager unit, UnitsBaseData baseData)
     {
         LayerMask enemyLayer = LayerMask.GetMask("EnemyUnit"); // Set this to the layer of your enemy units
 
@@ -34,7 +34,7 @@ public class PlayerUnitsMovingState : PlayerUnitsBaseState
         if (enemyInRange != null)
         {
             Debug.Log("Enemy found: " + enemyInRange.gameObject.name);
-            unit.TargetEnemy = enemyInRange.gameObject;
+            unit.targetEnemy = enemyInRange.gameObject;
             unit.SwitchState(unit.ChasingState);
         }
     }

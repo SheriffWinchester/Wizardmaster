@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerUnitsStateManager : MonoBehaviour
 {
-    public GameObject TargetEnemy { get; set; }
+    public GameObject targetEnemy { get; set; }
     PlayerUnitsBaseState currentState;
-    public UnitBaseData baseData;
+    public UnitsBaseData baseData;
     public PlayerUnitsMovingState MovingState = new PlayerUnitsMovingState();
     public PlayerUnitsChasingState ChasingState = new PlayerUnitsChasingState();
     public PlayerUnitsAttackState AttackState = new PlayerUnitsAttackState();
+    public Unit1Controller unit1Controller;
 
     void Start()
     {

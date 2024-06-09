@@ -6,7 +6,7 @@ public abstract class PlayerUnitsBaseState
 {
     //public UnitBaseData baseData;
     public abstract void EnterState(PlayerUnitsStateManager unit);
-    public abstract void UpdateState(PlayerUnitsStateManager unit, UnitBaseData baseData);
+    public abstract void UpdateState(PlayerUnitsStateManager unit, UnitsBaseData baseData);
     public abstract void OnCollisionEnter2D(PlayerUnitsStateManager unit);
 
 }

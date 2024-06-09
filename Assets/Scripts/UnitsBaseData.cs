@@ -5,13 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "UnitData", menuName = "Unit Base Data")]
 // This class is used to store the basic properties of all units
 // Check Wizard object for correct references
-public class UnitBaseData : ScriptableObject 
+public class UnitsBaseData : ScriptableObject 
 {
     [SerializeField] public float defaultHealth=100;
     [SerializeField] public float defaultMagic=100;
 
     public int movingSpeed = 1;
     public float searchRadius = 1.5f;
+    public float searchAttackRadius = 0.5f;
     public GameObject CreateUnit(GameObject unitPrefab)
     {
         GameObject newUnit = Instantiate(unitPrefab, new Vector3(-4, 2, 0), Quaternion.identity);

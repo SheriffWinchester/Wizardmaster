@@ -9,7 +9,7 @@ public class EnemyUnitsMovingState : EnemyUnitsBaseState
         Debug.Log("Moving State");
     }
 
-    public override void UpdateState(EnemyUnitsStateManager unit, UnitBaseData baseData)
+    public override void UpdateState(EnemyUnitsStateManager unit, UnitsBaseData baseData)
     {
         Moving(unit, baseData);
         SearchingUnits(unit, baseData);
@@ -20,20 +20,20 @@ public class EnemyUnitsMovingState : EnemyUnitsBaseState
         
     }
 
-    void Moving(EnemyUnitsStateManager unit, UnitBaseData baseData)
+    void Moving(EnemyUnitsStateManager unit, UnitsBaseData baseData)
     {
         unit.transform.Translate(-baseData.movingSpeed * Time.deltaTime, 0, 0);
     }
-    void SearchingUnits(EnemyUnitsStateManager unit, UnitBaseData baseData)
+    void SearchingUnits(EnemyUnitsStateManager unit, UnitsBaseData baseData)
     {
-        LayerMask enemyLayer = LayerMask.GetMask("PlayerUnit"); // Set this to the layer of your enemy units
+        LayerMask unitLayer = LayerMask.GetMask("PlayerUnit"); // Set this to the layer of your enemy units
 
-        Collider2D enemyInRange = Physics2D.OverlapCircle(unit.transform.position, baseData.searchRadius, layerMask: enemyLayer);
-        Debug.Log("Unit in range: " + enemyLayer.value);
-        if (enemyInRange != null)
+        Collider2D unitInRange = Physics2D.OverlapCircle(unit.transform.position, baseData.searchRadius, layerMask: unitLayer);
+        Debug.Log("Unit in range: " + unitLayer.value);
+        if (unitInRange != null)
         {
-            Debug.Log("Unit found: " + enemyInRange.gameObject.name);
-            unit.TargetEnemy = enemyInRange.gameObject;
+            Debug.Log("Unit found: " + unitInRange.gameObject.name);
+            unit.targetUnit = unitInRange.gameObject;
             unit.SwitchState(unit.ChasingState);
         }
     }
